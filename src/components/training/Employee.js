@@ -1,17 +1,15 @@
-import React from 'react';
+import React from 'react'; 
 import { useState, useEffect } from 'react';
 import JavaData from './JavaData';
-// import Counter from './Counter';
 
 let Employee = () => {
-    const [emp, setEmp] = useState('');
-    const [parentEmp, setParentEmp] = useState({}); // parent state  
+    const [parentEmp, setParentEmp] = useState({}); // parent state 1.  
     const [parentEmpHike, setParentEmpHke] = useState(0); // parent state  
     const [childEmp, setChildEmp] = useState({}); // from callback    
 
     useEffect(() => {
 
-        setParentEmp({
+        setParentEmp({ // 2
             id: 201,
             name: 'Monu',
             salary: 20.5
@@ -34,12 +32,12 @@ let Employee = () => {
             {/* <JavaData></JavaData> */}
             <p>parent {childEmp.name}</p>
             <JavaData
-                parentEmp={parentEmp}
+                parentEmp={parentEmp} // 3
                 parentEmpHike={parentEmpHike}
                 parentCallback={handleCallback}
             ></JavaData>
-            {/* <Counter></Counter> */}
         </div>
     )
 }
+
 export default Employee;

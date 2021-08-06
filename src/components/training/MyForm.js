@@ -1,11 +1,20 @@
 import React from 'react';
 import Login from './Login';
+
 class MyFileInput extends React.Component {
+
     constructor(props) {
-        super()
-        this.curriculum = React.createRef()
-        this.handleSubmit = this.handleSubmit.bind(this)
+        super();
+        this.curriculum = React.createRef(); // class componnt 
+        this.handleSubmit = this.handleSubmit.bind(this); // class component , required for old js function  
     }
+
+    // const handleSubmit = (event) => {
+    //     alert(this.curriculum.current.files[0].name)
+    //     event.preventDefault()
+    // }
+
+
     handleSubmit(event) {
         alert(this.curriculum.current.files[0].name)
         event.preventDefault()
